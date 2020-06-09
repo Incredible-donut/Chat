@@ -1,12 +1,12 @@
 var messages = document.getElementById('messages');
 //get messages from server
 async function getMessagesFromServer(){
-  for (var i = 0; i < response.length; i++) {
-   var messageData = response[i];
-   console.log(messageData); 
-  }  
   var response = await fetch('https://fchatiavi.herokuapp.com/get/Incredibledonutsroom/?offset=0&limit=10');
   response = await response.json();
+   for (var i = 0; i < response.length; i++) {
+   var messageData = response[i];
+   console.log(messageData); 
+  } 
   var message = `    
     <div class="container" style="margin-top:30px;">
       <div><p style="color:white; position:relative; left:-10px; top:17px; background-color:#1C1E25; border-radius:7px; ">Name</p></div>
