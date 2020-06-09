@@ -1,5 +1,6 @@
 var messages = document.getElementById('messages');
 //get messages from server
+window.onload = getMessagesFromServer();
 async function getMessagesFromServer(){
   var response = await fetch('https://fchatiavi.herokuapp.com/get/Incredibledonutsroom/?offset=0&limit=10');
   response = await response.json();
@@ -16,7 +17,28 @@ async function getMessagesFromServer(){
     </div>
 `
        allMessagesHTML = allMessagesHTML + message;
-  } 
-
+  
+}
   messages.innerHTML = allMessagesHTML;
 }
+} 
+async function sendUserMessage(){
+ var nickname = document.getElementById('nickname').value;
+ var message = document.getElementById('message').value;
+ if (nickname.length === 0){
+ alert("You need to chose a nickname!");
+ return;
+ }
+  if (message.length === 0){
+ alert("Type thomething. You can't just send an empty message!");
+  return;
+ }
+  await fetch('https://fchatiavi.herokuapp.com/send/Room8475712361938', {
+  method: 'POST',
+  body: JSON.stringify({
+  Name: nickname,
+  Message: message
+  })
+  });
+}
+getMessagesFromServer();
