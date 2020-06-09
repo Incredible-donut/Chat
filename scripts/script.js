@@ -3,6 +3,7 @@ var messages = document.getElementById('messages');
 async function getMessagesFromServer(){
   var response = await fetch('https://fchatiavi.herokuapp.com/get/Incredibledonutsroom/?offset=0&limit=10');
   response = await response.json();
+  var allMessagesHTML = '';
    for (var i = 0; i < response.length; i++) {
    var messageData = response[i];
    console.log(messageData); 
@@ -13,8 +14,9 @@ async function getMessagesFromServer(){
       <p> ${messageData.Message} </p>
       </div>
     </div>
-`;
+`
+       allMessagesHTML = allMessagesHTML + message;
   } 
 
-  messages.innerHTML = message;
+  messages.innerHTML = allMessagesHTML;
 }
