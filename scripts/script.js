@@ -1,10 +1,10 @@
 var messages = document.getElementById('messages');
 var sendButton = document.getElementById('send-button');
-var confirmNickname = document.getElementById('nickname');
+var confirmNicknameBtn = document.getElementById('nickname');
 var nickNameSet = false;
 
 sendButton.AddEventListener('click', sendUserMessage);
-sendButton.AddEventListener('click', confirmNickname);
+confirmNicknameBtn.AddEventListener('click', confirmNickname);
 //get messages from server
 window.onload = getMessagesFromServer();
 
