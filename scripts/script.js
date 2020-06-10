@@ -56,7 +56,7 @@ async function sendUserMessage(){
   getMessagesFromServer();
   }
   else {
-  alert('Choose a nickname!')
+  alert('Choose a nickname!');
   }
 }
 
