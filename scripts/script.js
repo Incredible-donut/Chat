@@ -28,18 +28,18 @@ async function getMessagesFromServer(){
 async function sendUserMessage(){
  var nicknamevar = document.getElementById('nickname').value;
  var messagevar = document.getElementById('message').value;
- if (nickname.length === 0){
+ if (nicknamevar.length === 0){
  alert("You need to chose a nickname!");
  return;
  }
-  if (message.length === 0){
+  if (nicknamevar.length === 0)
  alert("Type thomething. You can't just send an empty message!");
   return;
  }
   await fetch('https://fchatiavi.herokuapp.com/send/IncredibleDonutsRoom', {
   method: 'POST',
   body: JSON.stringify({
-  Name: nicknamevar ,
+  Name: nicknamevar,
   Message: messagevar
   })
   });
