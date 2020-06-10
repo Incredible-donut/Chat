@@ -27,8 +27,8 @@ async function getMessagesFromServer(){
   }
 } 
 async function sendUserMessage(){
- var nickname = document.getElementById('nickname').value;
- var message = document.getElementById('message').value;
+ var nicknamevar = document.getElementById('nickname').value;
+ var messagevar = document.getElementById('message').value;
  if (nickname.length === 0){
  alert("You need to chose a nickname!");
  return;
@@ -40,9 +40,10 @@ async function sendUserMessage(){
   await fetch('https://fchatiavi.herokuapp.com/send/Room84757', {
   method: 'POST',
   body: JSON.stringify({
-  Name: nickname,
-  Message: message
+  Name: nicknamevar ,
+  Message: messagevar
   })
   });
+  getMessagesFromServer();
 }
-getMessagesFromServer();
+
