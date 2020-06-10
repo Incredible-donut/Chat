@@ -4,7 +4,7 @@ var confirmNicknameBtn = document.getElementById('nickname');
 var nicknamevar = document.getElementById('nickname').value;
 var nickNameSet = false;
 
-sendButton.AddEventListener('click', sendUserMessage);
+sendButton.addEventListener('click', sendUserMessage);
 confirmNicknameBtn.AddEventListener('click', confirmNickname);
 //get messages from server
 window.onload = getMessagesFromServer();
