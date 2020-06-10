@@ -11,7 +11,7 @@ window.onload = getMessagesFromServer();
 
 async function getMessagesFromServer(){
   
-  var response = await fetch('https://fchatiavi.herokuapp.com/get/IncredibleDonutsRoomOne/?offset=0&limit=50');
+  var response = await fetch('https://fchatiavi.herokuapp.com/get/IncredibleDonutsRoomTwo/?offset=0&limit=50');
   response = await response.json();
   var allMessagesHTML = '';
   
@@ -44,7 +44,7 @@ async function sendUserMessage(){
   if (nicknamevar.length === 0){
   alert("You need to chose a nickname!");
  }
-  await fetch('https://fchatiavi.herokuapp.com/send/IncredibleDonutsRoomOne/', {
+  await fetch('https://fchatiavi.herokuapp.com/send/IncredibleDonutsRoomTwo/', {
   method: 'POST',
   body: JSON.stringify({
   Name: nicknamevar,
