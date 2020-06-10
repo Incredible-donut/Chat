@@ -24,8 +24,7 @@ async function getMessagesFromServer(){
   
     }
   messages.innerHTML = allMessagesHTML;
-  }
-} 
+}
 async function sendUserMessage(){
  var nicknamevar = document.getElementById('nickname').value;
  var messagevar = document.getElementById('message').value;
