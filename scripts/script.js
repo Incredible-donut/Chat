@@ -2,9 +2,9 @@ var messages = document.getElementById('messages');
 //get messages from server
 window.onload = getMessagesFromServer();
 
-function getMessagesFromServer(){
+await function getMessagesFromServer(){
   
-  var response = await fetch('https://fchatiavi.herokuapp.com/get/IncredibleDonutsRoomOne/?offset=0&limit=10');
+  var response = fetch('https://fchatiavi.herokuapp.com/get/IncredibleDonutsRoomOne/?offset=0&limit=10');
   response = await response.json();
   var allMessagesHTML = '';
   
