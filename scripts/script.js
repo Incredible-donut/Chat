@@ -1,4 +1,10 @@
 var messages = document.getElementById('messages');
+var sendButton = document.getElementById('send-button');
+var confirmNickname = document.getElementById('nickname');
+var nickNameSet = false;
+
+sendButton.AddEventListener('click', sendUserMessage);
+sendButton.AddEventListener('click', confirmNickname);
 //get messages from server
 window.onload = getMessagesFromServer();
 
@@ -25,13 +31,17 @@ async function getMessagesFromServer(){
     }
   messages.innerHTML = allMessagesHTML;
 }
-async function sendUserMessage(){
- var nicknamevar = document.getElementById('nickname').value;
- var messagevar = document.getElementById('message').value;
- if (nicknamevar.length === 0){
+function confirmNickname(){
+var nicknamevar = document.getElementById('nickname').value;
+var nickNameSet = true;
+if (nicknamevar.length === 0){
  alert("You need to chose a nickname!");
  return;
- }
+}
+}
+async function sendUserMessage(){
+ if (nickNameSet === true;){
+ var messagevar = document.getElementById('message').value;
   if (nicknamevar.length === 0){
  alert("Type thomething. You can't just send an empty message!");
   return;
@@ -44,5 +54,9 @@ async function sendUserMessage(){
   })
   });
   getMessagesFromServer();
+  }
+  else {
+  alert('Choose a nickname!')
+  }
 }
 
