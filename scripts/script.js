@@ -32,7 +32,7 @@ async function sendUserMessage(){
  alert("You need to chose a nickname!");
  return;
  }
-  if (nicknamevar.length === 0)
+  if (nicknamevar.length === 0){
  alert("Type thomething. You can't just send an empty message!");
   return;
  }
