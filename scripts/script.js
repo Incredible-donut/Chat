@@ -34,7 +34,6 @@ async function getMessagesFromServer(){
 
 
 async function sendUserMessage(){
- if (nickNameSet === true;){
  if (nickNameSet === true){
  var messagevar = document.getElementById('message').value;
   if (nicknamevar.length === 0){
@@ -56,7 +55,6 @@ function confirmNickname(){
 var nickNameSet = true;
 if (nicknamevar.length === 0){
   alert("You need to chose a nickname!");
- else {
  } else {
   alert('Choose a nickname!');
  }
