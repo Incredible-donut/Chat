@@ -1,7 +1,7 @@
 var messages = document.getElementById('messages');
 var sendButton = document.getElementById('send-button');
 
-sendButton.AddEventListener('click', sendUserMessage);
+sendButton.addEventListener('click', sendUserMessage);
 //get messages from server
 window.onload = getMessagesFromServer();
 
