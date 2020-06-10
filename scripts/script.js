@@ -32,9 +32,9 @@ async function getMessagesFromServer(){
     }
   messages.innerHTML = allMessagesHTML;
 }
-}
+
 async function sendUserMessage(){
- if (nickNameSet === true;){
+ if (nickNameSet === true){
  var messagevar = document.getElementById('message').value;
   if (nicknamevar.length === 0){
  alert("Type thomething. You can't just send an empty message!");
@@ -56,8 +56,7 @@ function confirmNickname(){
 var nickNameSet = true;
 if (nicknamevar.length === 0){
   alert("You need to chose a nickname!");
- else {
+ } else {
   alert('Choose a nickname!');
  }
 }
-  
