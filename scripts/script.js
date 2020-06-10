@@ -4,7 +4,7 @@ window.onload = getMessagesFromServer();
 
 async function getMessagesFromServer(){
   
-  var response = await fetch('https://fchatiavi.herokuapp.com/get/Room84757/?offset=0&limit=10');
+  var response = await fetch('https://fchatiavi.herokuapp.com/get/IncredibleDonutsRoom/?offset=0&limit=10');
   response = await response.json();
   var allMessagesHTML = '';
   
@@ -36,7 +36,7 @@ async function sendUserMessage(){
  alert("Type thomething. You can't just send an empty message!");
   return;
  }
-  await fetch('https://fchatiavi.herokuapp.com/send/Room84757', {
+  await fetch('https://fchatiavi.herokuapp.com/send/IncredibleDonutsRoom', {
   method: 'POST',
   body: JSON.stringify({
   Name: nicknamevar ,
