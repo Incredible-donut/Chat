@@ -31,7 +31,7 @@ async function getMessagesFromServer(){
     }
   messages.innerHTML = allMessagesHTML;
 }
-}
+
 
 async function sendUserMessage(){
  if (nickNameSet === true;){
