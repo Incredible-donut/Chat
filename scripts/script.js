@@ -8,7 +8,7 @@ async function getMessagesFromServer(){
   response = await response.json();
   var allMessagesHTML = '';
   
-   for (var i = 0; i < Infinity; i++) {
+   for (var i = 0; i < response.length; i++) {
      
    var messageData = response[i];
    console.log(messageData); 
