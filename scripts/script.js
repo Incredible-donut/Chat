@@ -13,6 +13,9 @@ scrollToEnd();
   }
 lastMessages = response;
 }
+function scrollToEnd(){
+ messages.scrollTop = messages.scrollHeight;
+}
 async function getMessagesFromServer(){
   
   var response = await fetch('https://fchatiavi.herokuapp.com/get/lightsalmonsroom/?offset=0&limit=100');
@@ -49,6 +52,7 @@ async function sendUserMessage(){
   alert("You need to chose a nickname!");
   return;
  }
+ 
   await fetch('https://fchatiavi.herokuapp.com/send/lightsalmonsroom/', {
   method: 'POST',
   body: JSON.stringify({
@@ -58,7 +62,3 @@ async function sendUserMessage(){
      });
   getMessagesFromServer();
   }
-}
-function scrollToEnd {
-messages.scrollTop = messages.scrollHeight;
-}
