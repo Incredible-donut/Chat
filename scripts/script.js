@@ -15,6 +15,7 @@ lastMessages = response;
 }
 function scrollToEnd(){
  messages.scrollTop = messages.scrollHeight;
+ element.scroll(0, -1000);
 }
 async function getMessagesFromServer(){
   
