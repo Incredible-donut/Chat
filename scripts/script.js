@@ -9,7 +9,7 @@ window.onload = getMessagesFromServer();
 function roomCheck(){
 var room = roomChose.value;
 if(lastMessages.length < response.length){
-messages.scrollTop = messages.scrollHeight;
+scrollToEnd();
   }
 lastMessages = response;
 }
@@ -58,4 +58,6 @@ async function sendUserMessage(){
    });
   getMessagesFromServer();
 }
-
+function scrollToEnd{
+messages.scrollTop = messages.scrollHeight;
+}
