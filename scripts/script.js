@@ -1,10 +1,18 @@
 var messages = document.getElementById('messages');
 var sendButton = document.getElementById('send-button');
+var roomChose = document.getElementById('room-input');
+var lastMessages = [];
 
 sendButton.addEventListener('click', sendUserMessage);
 //get messages from server
 window.onload = getMessagesFromServer();
-
+function roomCheck(){
+var room = roomChose.value;
+if(lastMessages.length < response.length){
+messages.scrollTop = messages.scrollHeight;
+  }
+lastMessages = response;
+}
 async function getMessagesFromServer(){
   
   var response = await fetch('https://fchatiavi.herokuapp.com/get/lightsalmonsroom/?offset=0&limit=100');
@@ -27,7 +35,7 @@ async function getMessagesFromServer(){
   
     }
   messages.innerHTML = allMessagesHTML;
-  setTimeout(getMessagesFromServer, 3000)
+  setTimeout(getMessagesFromServer, 2000)
 }
 
 async function sendUserMessage(){
