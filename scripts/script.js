@@ -54,9 +54,10 @@ async function sendUserMessage(){
   body: JSON.stringify({
   Name: nicknamevar,
   Message: messagevar
-     })
-   });
+       })
+     });
   getMessagesFromServer();
+  }
 }
 function scrollToEnd {
 messages.scrollTop = messages.scrollHeight;
