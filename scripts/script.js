@@ -27,6 +27,7 @@ async function getMessagesFromServer(){
   
     }
   messages.innerHTML = allMessagesHTML;
+  setTimeout(getMessagesFromServer, 3000)
 }
 
 async function sendUserMessage(){
