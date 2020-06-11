@@ -11,7 +11,7 @@ window.onload = getMessagesFromServer();
 
 async function getMessagesFromServer(){
   
-  var response = await fetch('https://fchatiavi.herokuapp.com/get/IncredibleDonutsRoomTwo/?offset=0&limit=50');
+  var response = await fetch('https://fchatiavi.herokuapp.com/get/IncredibleDonutsRoomTwo/?offset=0&limit=10');
   response = await response.json();
   var allMessagesHTML = '';
   
