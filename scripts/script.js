@@ -58,6 +58,6 @@ async function sendUserMessage(){
    });
   getMessagesFromServer();
 }
-function scrollToEnd{
+function scrollToEnd {
 messages.scrollTop = messages.scrollHeight;
 }
