@@ -1,11 +1,7 @@
 var messages = document.getElementById('messages');
 var sendButton = document.getElementById('send-button');
-var confirmNicknameBtn = document.getElementById('nickname');
-var nicknamevar = document.getElementById('nickname').value;
-var nickNameSet = false;
 
 sendButton.addEventListener('click', sendUserMessage);
-confirmNicknameBtn.AddEventListener('click', confirmNickname);
 //get messages from server
 window.onload = getMessagesFromServer();
 
@@ -34,15 +30,15 @@ async function getMessagesFromServer(){
 }
 
 async function sendUserMessage(){
- if (nickNameSet === true){
  var nicknamevar = document.getElementById('nickname').value;
  var messagevar = document.getElementById('message').value;
-  if (nicknamevar.length === 0){
+ if (nicknamevar.length === 0){
  alert("Type thomething. You can't just send an empty message!");
-  return;
+ return;
  }
   if (nicknamevar.length === 0){
   alert("You need to chose a nickname!");
+  return;
  }
   await fetch('https://fchatiavi.herokuapp.com/send/IncredibleDonutsRoomTwo/', {
   method: 'POST',
@@ -54,14 +50,3 @@ async function sendUserMessage(){
   getMessagesFromServer();
   }
 
-}
-
-function confirmNickname(){
-var nickNameSet = true;
-if (nicknamevar.length === 0){
-  alert("You need to chose a nickname!");
- } else {
-  alert('Choose a nickname!');
- }
-
-}
