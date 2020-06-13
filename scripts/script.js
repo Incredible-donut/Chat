@@ -51,6 +51,7 @@ async function sendUserMessage(){
    });
   getMessagesFromServer();
 }
+
 function scrollDown(){
-messages.scrollTop = messages.scrollHeight
+messages.scrollTop = messages.scrollHeight;
 }
