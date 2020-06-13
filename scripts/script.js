@@ -3,6 +3,7 @@ var sendButton = document.getElementById('send-button');
 sendButton.addEventListener('click', sendUserMessage);
 //get messages from server
 start ();
+
 function start (){
   getMessagesFromServer();
   scrollDown();
@@ -52,6 +53,6 @@ async function sendUserMessage(){
   getMessagesFromServer();
 }
 
-function scrollDown(){
+function scrollDown() {
 messages.scrollTop = messages.scrollHeight;
 }
