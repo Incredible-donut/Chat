@@ -49,7 +49,7 @@ async function sendUserMessage(){
      });
   getMessagesFromServer();
   }
-function formMessages(var messageData){
+function formMessages(messageData){
     var allMessagesHTML = '';
        var message = `    
     <div class="container" style="margin-top:30px;">
