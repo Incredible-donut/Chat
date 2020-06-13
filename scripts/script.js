@@ -2,8 +2,12 @@ var messages = document.getElementById('messages');
 var sendButton = document.getElementById('send-button');
 sendButton.addEventListener('click', sendUserMessage);
 //get messages from server
-window.onload = getMessagesFromServer();
-async function getMessagesFromServer(){
+start ();
+function start (){
+  getMessagesFromServer();
+  scrollDown();
+}
+async function getMessagesFromServer (){
   
   var response = await fetch('https://fchatiavi.herokuapp.com/get/lightsalmonsroom/?offset=0&limit=10000');
   response = await response.json();
@@ -24,7 +28,6 @@ async function getMessagesFromServer(){
 
     }
   messages.innerHTML = allMessagesHTML;
-  scrollDown();
   setTimeout(getMessagesFromServer, 3000)
 }
 
