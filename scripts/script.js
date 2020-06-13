@@ -24,6 +24,7 @@ async function getMessagesFromServer(){
 
     }
   messages.innerHTML = allMessagesHTML;
+  scrollDown();
   setTimeout(getMessagesFromServer, 3000)
 }
 
@@ -46,4 +47,7 @@ async function sendUserMessage(){
      })
    });
   getMessagesFromServer();
+}
+function scrollDown(){
+messages.scrollTop = messages.scrollHeight
 }
