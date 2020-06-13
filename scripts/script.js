@@ -21,7 +21,9 @@ async function getMessagesFromServer(){
   
   var response = await fetch('https://fchatiavi.herokuapp.com/get/lightsalmonsroom/?offset=0&limit=100');
   response = await response.json();
+     for (var i = 0; i < response.length; i++) {
   formMessages();
+     }
   setTimeout(getMessagesFromServer, 2000)
 }
 
@@ -48,7 +50,6 @@ async function sendUserMessage(){
   }
 function formMessages(){
     var allMessagesHTML = '';
-   for (var i = 0; i < response.length; i++) {
      
    var messageData = response[i];
    console.log(messageData); 
@@ -62,6 +63,6 @@ function formMessages(){
 `
        allMessagesHTML = allMessagesHTML + message;
   
-    }
+    
   messages.innerHTML = allMessagesHTML;
 }
