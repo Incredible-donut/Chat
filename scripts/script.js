@@ -1,7 +1,7 @@
 var messages = document.getElementById('messages');
 var sendButton = document.getElementById('send-button');
-var quanOfMessagesInHTML = '';
 sendButton.addEventListener('click', sendUserMessage);
+var quanOfMessagesInHTML = '';
 //get messages from server
 start ();
 
