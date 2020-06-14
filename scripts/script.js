@@ -1,6 +1,6 @@
 var messages = document.getElementById('messages');
 var sendButton = document.getElementById('send-button');
-var quanOfMessagesInHTML = '';
+var quanOfMessagesInHTML = [];
 sendButton.addEventListener('click', sendUserMessage);
 //get messages from server
 start ();
@@ -34,7 +34,7 @@ async function getMessagesFromServer (){
   if(quanOfMessagesInHTML.length < response.length){
   scrollDown();
   }
-  quanOfMessagesInHTML = response.length;
+  quanOfMessagesInHTML = response;
 }
 
 async function sendUserMessage(){
