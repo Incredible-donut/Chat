@@ -31,10 +31,10 @@ async function getMessagesFromServer (){
     }
   messages.innerHTML = allMessagesHTML;
   setTimeout(getMessagesFromServer, 3000)
-  if(quanOfMessagesInHTML.length !== response.length){
+  if(quanOfMessagesInHTML.length < response.length){
   scrollDown();
-  quanOfMessagesInHTML = response.length;
   }
+  quanOfMessagesInHTML = response.length;
 }
 
 async function sendUserMessage(){
