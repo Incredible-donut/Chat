@@ -58,5 +58,5 @@ async function sendUserMessage(){
 
 function scrollDown() {
 var messagesOne = document.getElementById('messages');
-messagesOne.scrollTop = messages.scrollHeight;
+messagesOne.scrollTop = messagesOne.scrollHeight;
 }
