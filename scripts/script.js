@@ -31,10 +31,7 @@ async function getMessagesFromServer (){
     }
   messages.innerHTML = allMessagesHTML;
   setTimeout(getMessagesFromServer, 3000)
-  if(quanOfMessagesInHTML < response.length){
   messages.scrollTop = messages.scrollHeight;
-  quanOfMessagesInHTML = response.length;
-  }
 }
 
 async function sendUserMessage(){
