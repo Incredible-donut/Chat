@@ -12,7 +12,7 @@ function start (){
 }
 async function getMessagesFromServer (){
   var roomName = roomNameInput.value;
-  var response = await fetch(`https://fchatiavi.herokuapp.com/get/${roomNameInput.value}/?offset=0&limit=10000`);
+  var response = await fetch(`https://fchatiavi.herokuapp.com/get/${roomName}/?offset=0&limit=10000`);
   response = await response.json();
   var allMessagesHTML = '';
   
@@ -39,6 +39,7 @@ async function getMessagesFromServer (){
 }
 
 async function sendUserMessage(){
+ var roomName = roomNameInput.value;
  var nicknamevar = document.getElementById('nickname').value;
  var messagevar = document.getElementById('message').value;
  if (messagevar.length === 0){
@@ -49,7 +50,7 @@ async function sendUserMessage(){
   alert("You need to chose a nickname!");
   return;
  }
-  await fetch(`https://fchatiavi.herokuapp.com/send/${roomNameInput.value}/`, {
+  await fetch(`https://fchatiavi.herokuapp.com/send/${roomName}/`, {
   method: 'POST',
   body: JSON.stringify({
   Name: nicknamevar,
