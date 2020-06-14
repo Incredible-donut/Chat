@@ -33,6 +33,7 @@ async function getMessagesFromServer (){
   setTimeout(getMessagesFromServer, 3000)
   if(quanOfMessagesInHTML.length !== response.length){
   scrollDown();
+  quanOfMessagesInHTML = response.length;
   }
 }
 
