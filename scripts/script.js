@@ -30,12 +30,15 @@ async function getMessagesFromServer (){
     }
   messages.innerHTML = allMessagesHTML;
   setTimeout(getMessagesFromServer, 3000)
+  if(allMessagesHTML < response.length){
+  scrollDown;
+  }
 }
 
 async function sendUserMessage(){
  var nicknamevar = document.getElementById('nickname').value;
  var messagevar = document.getElementById('message').value;
- if (nicknamevar.length === 0){
+ if (messagevar.length === 0){
  alert("Type thomething. You can't just send an empty message!");
  return;
  }
