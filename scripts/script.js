@@ -1,5 +1,6 @@
 var messages = document.getElementById('messages');
 var sendButton = document.getElementById('send-button');
+var roomNameInput = document.getElementById('Room-input');
 var quanOfMessagesInHTML = [];
 sendButton.addEventListener('click', sendUserMessage);
 //get messages from server
@@ -10,8 +11,8 @@ function start (){
   scrollDown();
 }
 async function getMessagesFromServer (){
-  
-  var response = await fetch('https://fchatiavi.herokuapp.com/get/lightsalmonsroom/?offset=0&limit=10000');
+  var roomName = roomNameInput.value;
+  var response = await fetch(`https://fchatiavi.herokuapp.com/get/${roomname}/?offset=0&limit=10000`);
   response = await response.json();
   var allMessagesHTML = '';
   
@@ -48,7 +49,7 @@ async function sendUserMessage(){
   alert("You need to chose a nickname!");
   return;
  }
-  await fetch('https://fchatiavi.herokuapp.com/send/lightsalmonsroom/', {
+  await fetch(`https://fchatiavi.herokuapp.com/send/${roomName}/`, {
   method: 'POST',
   body: JSON.stringify({
   Name: nicknamevar,
