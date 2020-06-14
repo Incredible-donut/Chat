@@ -12,7 +12,7 @@ function start (){
 }
 async function getMessagesFromServer (){
   var roomName = roomNameInput.value;
-  var response = await fetch(`https://fchatiavi.herokuapp.com/get/${roomname}/?offset=0&limit=10000`);
+  var response = await fetch(`https://fchatiavi.herokuapp.com/get/${roomName}/?offset=0&limit=10000`);
   response = await response.json();
   var allMessagesHTML = '';
   
