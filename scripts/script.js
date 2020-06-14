@@ -12,7 +12,7 @@ function start (){
 }
 async function getMessagesFromServer (){
   var roomName = roomNameInput.value;
-  var response = await fetch(`https://fchatiavi.herokuapp.com/get/${roomName}/?offset=0&limit=10000`);
+  var response = await fetch(`https://fchatiavi.herokuapp.com/get/${roomNameInput.value}/?offset=0&limit=10000`);
   response = await response.json();
   var allMessagesHTML = '';
   
@@ -49,7 +49,7 @@ async function sendUserMessage(){
   alert("You need to chose a nickname!");
   return;
  }
-  await fetch(`https://fchatiavi.herokuapp.com/send/${roomName}/`, {
+  await fetch(`https://fchatiavi.herokuapp.com/send/${roomNameInput.value}/`, {
   method: 'POST',
   body: JSON.stringify({
   Name: nicknamevar,
